@@ -16,7 +16,7 @@ jobs:
           sudo mv oc /usr/local/bin/
       - name: Login to OpenShift
         run: |
-          oc login ${{ secrets.OCP_SERVER }} --token=${{ secrets.OCP_TOKEN }} --insecure-skip-tls-verify=true
+          oc login --token=sha256~qo50hdQSwn7rebWTktFgFowLlftqaCKAelUdVaY6-H8 --server=https://api.rm2.thpm.p1.openshiftapps.com:6443 --insecure-skip-tls-verify=true
       - name: Trigger Build
         run: |
           oc start-build voting-git-1 -n vvnserrao2002-dev --wait
